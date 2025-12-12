@@ -18,7 +18,7 @@ await connectDB();
 //middleware
 app.use(express.json());
 app.use(cors());
-app.use(clerkMiddleware())
+app.use(clerkMiddleware());
 
 
 // api routes
