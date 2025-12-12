@@ -50,5 +50,5 @@ const syncUserUpdation = inngest.createFunction(
 )
 
 // Create an empty array where we'll export future Inngest functions
- const functions = [syncUserCreation,syncUserDeletion,syncUserUpdation];
-export default serve({ client: inngest, functions });
+export  const functions = [syncUserCreation,syncUserDeletion,syncUserUpdation];
+// export default serve({ client: inngest, functions });

@@ -6,7 +6,7 @@ const connectDB =async ()=>{
         await mongoose.connect(`${process.env.MONGODB_URI}/book-my-show`)
     }catch(error)
     {
-        console.log(error);
+        console.log(error.message);
         
     }
 }
