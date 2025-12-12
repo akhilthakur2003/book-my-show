@@ -1,0 +1,14 @@
+import mongoose from 'mongoose'
+
+const connectDB =async ()=>{
+    try{
+        mongoose.connection.on('connected', ()=> console.log('Datebase connected'));
+        await mongoose.connect(`${process.env.MONGODB_URI}/book-my-show`)
+    }catch(error)
+    {
+        console.log(error);
+        
+    }
+}
+
+export default connectDB;
