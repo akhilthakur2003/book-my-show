@@ -2,7 +2,7 @@ import {Inngest} from 'inngest';
 import User from '../models/User.js';
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "movie-ticket-booking" });
+export const inngest = new Inngest({ id: "book-my-show" });
 
 
 // inngest funtion to save user data to database
@@ -14,7 +14,7 @@ const syncUserCreation = inngest.createFunction(
         const {id,first_name, last_name, email_addresses, image_url} =event.data;
         const userData = {
             _id: id,
-            email: email_addresses[0].email_addresses,
+            email: email_addresses[0].email_address,
             name: first_name +' '+last_name,
             image: image_url
         }
@@ -41,7 +41,7 @@ const syncUserUpdation = inngest.createFunction(
        const {id,first_name, last_name, email_addresses, image_url} =event.data;
         const userData = {
             _id: id,
-            email: email_addresses[0].email_addresses,
+            email: email_addresses[0].email_address,
             name: first_name +' '+last_name,
             image: image_url
         }
